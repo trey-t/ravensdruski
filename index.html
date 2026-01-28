@@ -5,15 +5,19 @@
     <title>Hello World</title>
 </head>
 <body>
-    <h1>Hello World</h1>
+    <h1>Whats good slime</h1>
     <label for="name">What is your name?</label>
     <input type="text" id="name" placeholder="Enter your name">
     <button onclick="greet()">Submit</button>
     <p id="greeting"></p>
     <script>
         function greet() {
-            const name = document.getElementById('name').value;
-            document.getElementById('greeting').textContent = 'Hello, ' + name + '!';
+            const name = document.getElementById('name').value.trim();
+            if (name.toLowerCase() === 'connor' || name.toLowerCase() === 'ben') {
+                document.getElementById('greeting').textContent = 'Hello, ' + name + '!';
+            } else {
+                document.getElementById('greeting').textContent = 'Use your real name.';
+            }
         }
     </script>
 </body>
