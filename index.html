@@ -2,7 +2,59 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Hello World</title>
+    <title>Whats Good Slime</title>
+    <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-color: #1a1a2e;
+            color: #e0e0e0;
+            font-family: 'Permanent Marker', cursive;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            color: #e94560;
+            font-size: 3em;
+        }
+        label {
+            font-size: 1.3em;
+        }
+        input {
+            padding: 10px;
+            font-size: 1.1em;
+            font-family: 'Permanent Marker', cursive;
+            border: 2px solid #e94560;
+            border-radius: 8px;
+            background: #16213e;
+            color: #e0e0e0;
+            margin: 15px 0;
+        }
+        button {
+            padding: 10px 25px;
+            font-size: 1.1em;
+            font-family: 'Permanent Marker', cursive;
+            background: #e94560;
+            color: #1a1a2e;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #ff6b81;
+        }
+        #greeting {
+            max-width: 600px;
+            text-align: center;
+            font-size: 1.2em;
+            line-height: 1.6;
+            margin-top: 20px;
+            white-space: pre-line;
+        }
+    </style>
 </head>
 <body>
     <h1>Whats good slime</h1>
@@ -13,10 +65,34 @@
     <script>
         function greet() {
             const name = document.getElementById('name').value.trim();
-            if (name.toLowerCase() === 'connor' || name.toLowerCase() === 'ben') {
-                document.getElementById('greeting').textContent = 'Hello, ' + name + '!';
+            const el = document.getElementById('greeting');
+            if (name.toLowerCase() === 'ben') {
+                el.textContent =
+`Oh Ben, sweet Ben, you step on the court,
+But your volleyball game is hilariously short.
+You swing at the ball and it goes out of bounds,
+Your serve hits the net and makes terrible sounds.
+
+You call for the set but you trip on your feet,
+Every spike you attempt is a glorious defeat.
+The ball hits your face, your arms, and your head,
+At this point just go play badminton instead.
+
+You bump it too high, you bump it too low,
+Your teammates all wonder where did their hope go.
+But hey, keep on trying, you beautiful mess,
+At least you showed up... even if you're the less.`;
+            } else if (name.toLowerCase() === 'connor') {
+                el.textContent =
+`Oh Connor... where do we even begin. Bro, your nuts STINK. Like we need to have a serious conversation about this. The moment you walk into a room, people's eyes start watering and they don't even know why yet. Scientists have tried to classify the smell but their equipment keeps breaking.
+
+Your nuts smell like a dumpster behind a seafood restaurant in August. They smell like if a skunk ate nothing but boiled eggs and asparagus for a month. The Geneva Convention is considering adding your nuts as a banned chemical weapon.
+
+NASA detected the stench from the International Space Station. Dogs refuse to sniff you. Febreze quit. Glade filed a restraining order.
+
+Bro please, for the love of humanity, for the sake of everyone who has ever been downwind of you — WASH. YOUR. NUTS. The world is begging you. The ozone layer can't take much more of this.`;
             } else {
-                document.getElementById('greeting').textContent = 'Use your real name.';
+                el.textContent = 'Use your real name.';
             }
         }
     </script>
