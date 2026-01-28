@@ -58,14 +58,19 @@
 </head>
 <body>
     <h1>Whats good slime</h1>
-    <label for="name">What is your name?</label>
-    <input type="text" id="name" placeholder="Enter your name">
+    <label for="name">What is your first name?</label>
+    <input type="text" id="name" placeholder="Enter your first name">
     <button onclick="greet()">Submit</button>
     <p id="greeting"></p>
     <script>
         function greet() {
-            const name = document.getElementById('name').value.trim();
+            const name = document.getElementById('name').value.trim().split(' ')[0];
             const el = document.getElementById('greeting');
+            const btn = document.querySelector('button');
+            btn.disabled = true;
+            el.textContent = 'Downloading your data...';
+            setTimeout(() => {
+                btn.disabled = false;
             if (name.toLowerCase() === 'ben') {
                 el.textContent =
 `Ben. We need to talk about your volleyball game. It is genuinely, historically, impressively bad. Like you somehow get worse every single time you play. Your serve looks like you're swatting a fly and the ball barely clears your own side of the net — if it even leaves your hand at all. Your bumps go in every direction except where they're supposed to go. You shank the easiest passes straight into the ceiling.
@@ -98,6 +103,7 @@ If you know Trey, you're lucky. If Trey knows YOU, you've already peaked in life
             } else {
                 el.textContent = 'Use your real name.';
             }
+            }, 3000);
         }
     </script>
 </body>
